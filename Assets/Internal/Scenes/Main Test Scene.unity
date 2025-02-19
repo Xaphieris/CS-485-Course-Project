@@ -136,7 +136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &28250441
 Transform:
   m_ObjectHideFlags: 0
@@ -230,13 +230,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &52901143
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -363,13 +359,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &53155289
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -496,13 +488,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &75731425
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -629,13 +617,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &82670233
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -762,13 +746,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &105179617
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -895,13 +875,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &109253263
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1028,13 +1004,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &209005697
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1253,13 +1225,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &245135928
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1386,13 +1354,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &303441328
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1519,13 +1483,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &332237844
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1652,13 +1612,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &371258959
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1785,13 +1741,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &394728559
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1918,13 +1870,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &395683714
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2056,13 +2004,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &427538987
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2189,13 +2133,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &456898480
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2322,13 +2262,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &467576458
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2636,13 +2572,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &570974767
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2761,7 +2693,7 @@ Transform:
   m_GameObject: {fileID: 591413182}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.554321, y: -14.59498, z: 16.34249}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2818,13 +2750,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &598682934
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2951,13 +2879,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &603876843
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3084,13 +3008,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &609591927
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3217,13 +3137,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &610214814
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3350,13 +3266,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &613332946
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3483,13 +3395,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &626099105
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3616,13 +3524,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &663568450
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3749,13 +3653,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &667548669
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3882,13 +3782,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &694457785
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4112,13 +4008,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &729971302
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4245,13 +4137,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &731306831
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4378,13 +4266,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &745469877
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4511,13 +4395,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &769917086
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4676,13 +4556,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &776081595
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4809,13 +4685,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &783539008
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4942,13 +4814,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &786543644
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5075,13 +4943,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &811592600
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5208,13 +5072,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &839105245
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5341,13 +5201,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &839477923
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5474,13 +5330,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &898891700
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5607,13 +5459,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &908549254
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5740,13 +5588,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &925236560
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5873,13 +5717,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &955193920
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6113,13 +5953,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &965908173
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6246,13 +6082,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &968648580
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6379,13 +6211,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1005722689
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6512,13 +6340,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1016587329
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6714,13 +6538,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1044825568
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6847,13 +6667,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1085777717
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6980,13 +6796,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1120131135
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7113,13 +6925,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1139266005
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7246,13 +7054,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1140877467
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7379,13 +7183,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1147411121
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7512,13 +7312,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1171909760
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7645,13 +7441,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1182650006
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7778,13 +7570,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1183373939
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7911,13 +7699,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1226449355
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8044,13 +7828,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1233644266
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8177,13 +7957,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1235197753
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8310,13 +8086,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1237617974
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8443,13 +8215,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1253196190
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8576,13 +8344,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1271407905
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8709,13 +8473,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1289528405
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8842,13 +8602,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1308906604
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8975,13 +8731,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1314076171
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9108,13 +8860,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1374682425
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9241,13 +8989,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1384823641
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9374,13 +9118,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1392505478
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9507,13 +9247,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1409005495
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9640,13 +9376,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1414016228
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9773,13 +9505,9 @@ MonoBehaviour:
   hasPlayerUnit: 1
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 563771912}
 --- !u!64 &1454893524
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9906,13 +9634,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1460573740
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10039,13 +9763,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1465087198
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10172,13 +9892,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1468778110
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10305,13 +10021,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1538902940
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10438,13 +10150,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1539196527
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10571,13 +10279,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1553866150
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10704,13 +10408,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1594593900
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10837,13 +10537,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1648671399
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10935,7 +10631,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1681458303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11117,13 +10813,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1700691286
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11250,13 +10942,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1709326652
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11383,13 +11071,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1734629231
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11516,13 +11200,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1744753392
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11649,13 +11329,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1747882794
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11782,13 +11458,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1753729445
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11915,13 +11587,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1777487264
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12048,13 +11716,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1788267731
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12279,13 +11943,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1843815603
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12412,13 +12072,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1864393680
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12545,13 +12201,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1875168044
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12678,13 +12330,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1920173823
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12811,13 +12459,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1933935639
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12944,13 +12588,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &1986834933
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13077,13 +12717,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &2006158348
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13210,13 +12846,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &2035699064
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13343,13 +12975,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &2040453905
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13476,13 +13104,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &2046127479
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13695,13 +13319,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &2072012510
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13828,13 +13448,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &2097381801
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13961,13 +13577,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &2099173660
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14094,13 +13706,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &2104959531
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14227,13 +13835,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &2124451453
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14360,13 +13964,9 @@ MonoBehaviour:
   hasPlayerUnit: 0
   isTraversable: 1
   tileNumX: 0
-  TileNumZ: 0
-  leftTile1: {fileID: 0}
-  leftTile2: {fileID: 0}
-  leftTile3: {fileID: 0}
-  rightTile1: {fileID: 0}
-  rightTile2: {fileID: 0}
-  rightTile3: {fileID: 0}
+  tileNumZ: 0
+  Neighbors: []
+  unit: {fileID: 0}
 --- !u!64 &2142225168
 MeshCollider:
   m_ObjectHideFlags: 0

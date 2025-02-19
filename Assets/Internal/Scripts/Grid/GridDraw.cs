@@ -56,7 +56,7 @@ public class GridDraw : MonoBehaviour
                 clone.name = "Tile " + x + ", " + z;
                 
                 clone.GetComponent<TileProp>().tileNumX = (int)x;
-                clone.GetComponent<TileProp>().TileNumZ = (int)z;
+                clone.GetComponent<TileProp>().tileNumZ = (int)z;
                 Debug.Log("Modified Clone Properties");
             }
         }
@@ -71,6 +71,7 @@ public class GridDraw : MonoBehaviour
             for (int x = 0; x < width; ++x)
             {
                 tile = tiles[x, z];
+                Debug.Log("Setting Neighbors for: " + tile.name);
 
                 /*
                     Coordinates For Even Rows
@@ -90,115 +91,128 @@ public class GridDraw : MonoBehaviour
                 {
                     if(x-1 < 0 || z+1 == height)
                     {
-                        tile.GetComponent<TileProp>().leftTile1 = null;
+                        //tile.GetComponent<TileProp>().leftTile1 = null;
                     }
                     else
                     {
-                        tile.GetComponent<TileProp>().leftTile1 = tiles[x-1,z+1];
+                        //tile.GetComponent<TileProp>().leftTile1 = tiles[x-1,z+1];
+                        tile.GetComponent<TileProp>().Neighbors.Add(tiles[x-1,z+1].GetComponent<TileProp>());
                     }
 
                     if(z+1 == height)
                     {
-                        tile.GetComponent<TileProp>().rightTile1 = null;
+                        //tile.GetComponent<TileProp>().rightTile1 = null;
                     }
                     else
                     {
-                        tile.GetComponent<TileProp>().rightTile1 = tiles[x, z+1];
+                        //tile.GetComponent<TileProp>().rightTile1 = tiles[x, z+1];
+                        tile.GetComponent<TileProp>().Neighbors.Add(tiles[x,z+1].GetComponent<TileProp>());
                     }
 
                     if(x+1 == width)
                     {
-                        tile.GetComponent<TileProp>().rightTile2 = null;
+                        //tile.GetComponent<TileProp>().rightTile2 = null;
                     }
                     else
                     {
-                        tile.GetComponent<TileProp>().rightTile2 = tiles[x+1, z];
+                        //tile.GetComponent<TileProp>().rightTile2 = tiles[x+1, z];
+                        tile.GetComponent<TileProp>().Neighbors.Add(tiles[x+1,z].GetComponent<TileProp>());
                     }
 
                     if(z-1 < 0)
                     {
-                        tile.GetComponent<TileProp>().rightTile3 = null; 
+                        //tile.GetComponent<TileProp>().rightTile3 = null; 
                     }
                     else
                     {
-                        tile.GetComponent<TileProp>().rightTile3 = tiles[x, z-1];
+                        //tile.GetComponent<TileProp>().rightTile3 = tiles[x, z-1];
+                        tile.GetComponent<TileProp>().Neighbors.Add(tiles[x,z-1].GetComponent<TileProp>());
                     }
 
                     if(x-1 < 0 || z-1 < 0)
                     {
-                        tile.GetComponent<TileProp>().leftTile3 = null;
+                        //tile.GetComponent<TileProp>().leftTile3 = null;
                     }
                     else
                     {
-                        tile.GetComponent<TileProp>().leftTile3 = tiles[x-1, z-1];
+                        //tile.GetComponent<TileProp>().leftTile3 = tiles[x-1, z-1];
+                        tile.GetComponent<TileProp>().Neighbors.Add(tiles[x-1,z-1].GetComponent<TileProp>());
                     }
 
                     if(x-1 < 0)
                     {
-                        tile.GetComponent<TileProp>().leftTile2 = null;
+                        //tile.GetComponent<TileProp>().leftTile2 = null;
                     }
                     else
                     {
-                        tile.GetComponent<TileProp>().leftTile2 = tiles[x-1,z];
+                        //tile.GetComponent<TileProp>().leftTile2 = tiles[x-1,z];
+                        tile.GetComponent<TileProp>().Neighbors.Add(tiles[x-1,z].GetComponent<TileProp>());
                     } 
                 }
                 else
                 {
                     if(z+1 == height)
                     {
-                        tile.GetComponent<TileProp>().leftTile1 = null;
+                        //tile.GetComponent<TileProp>().leftTile1 = null;
                     }
                     else
                     {
-                        tile.GetComponent<TileProp>().leftTile1 = tiles[x,z+1];
+                        //tile.GetComponent<TileProp>().leftTile1 = tiles[x,z+1];
+                        tile.GetComponent<TileProp>().Neighbors.Add(tiles[x,z+1].GetComponent<TileProp>());
                     }
 
                     if(x+1 == width || z+1 == height)
                     {
-                        tile.GetComponent<TileProp>().rightTile1 = null;
+                        //tile.GetComponent<TileProp>().rightTile1 = null;
                     }
                     else
                     {
-                        tile.GetComponent<TileProp>().rightTile1 = tiles[x+1, z+1];
+                        //tile.GetComponent<TileProp>().rightTile1 = tiles[x+1, z+1];
+                        tile.GetComponent<TileProp>().Neighbors.Add(tiles[x+1,z+1].GetComponent<TileProp>());
                     }
 
                     if(x+1 == width)
                     {
-                        tile.GetComponent<TileProp>().rightTile2 = null;
+                        //tile.GetComponent<TileProp>().rightTile2 = null;
                     }
                     else
                     {
-                        tile.GetComponent<TileProp>().rightTile2 = tiles[x+1, z];
+                        //tile.GetComponent<TileProp>().rightTile2 = tiles[x+1, z];
+                        tile.GetComponent<TileProp>().Neighbors.Add(tiles[x+1,z].GetComponent<TileProp>());
                     }
 
                     if(x+1 == width || z-1 < 0)
                     {
-                        tile.GetComponent<TileProp>().rightTile3 = null; 
+                        //tile.GetComponent<TileProp>().rightTile3 = null; 
                     }
                     else
                     {
-                        tile.GetComponent<TileProp>().rightTile3 = tiles[x+1, z-1];
+                        //tile.GetComponent<TileProp>().rightTile3 = tiles[x+1, z-1];
+                        tile.GetComponent<TileProp>().Neighbors.Add(tiles[x+1,z-1].GetComponent<TileProp>());
                     }
 
                     if(z-1 < 0)
                     {
-                        tile.GetComponent<TileProp>().leftTile3 = null;
+                        //tile.GetComponent<TileProp>().leftTile3 = null;
                     }
                     else
                     {
-                        tile.GetComponent<TileProp>().leftTile3 = tiles[x, z-1];
+                        //tile.GetComponent<TileProp>().leftTile3 = tiles[x, z-1];
+                        tile.GetComponent<TileProp>().Neighbors.Add(tiles[x,z-1].GetComponent<TileProp>());
                     }
 
                     if(x-1 < 0)
                     {
-                        tile.GetComponent<TileProp>().leftTile2 = null;
+                        //tile.GetComponent<TileProp>().leftTile2 = null;
                     }
                     else
                     {
-                        tile.GetComponent<TileProp>().leftTile2 = tiles[x-1,z];
+                        //tile.GetComponent<TileProp>().leftTile2 = tiles[x-1,z];
+                        tile.GetComponent<TileProp>().Neighbors.Add(tiles[x-1,z].GetComponent<TileProp>());
                     }
                 }
                 Debug.Log("Set relatives for: " + tile.name);
+
             }
         }
     }

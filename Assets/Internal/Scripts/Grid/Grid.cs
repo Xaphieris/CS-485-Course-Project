@@ -17,4 +17,15 @@ public class Grid : MonoBehaviour
     {
         
     }
+
+    public int GetDistance(GameObject startTile, GameObject endTile)
+    {
+        int startX = startTile.GetComponent<TileProp>().tileNumX;
+        int startZ = startTile.GetComponent<TileProp>().tileNumZ;
+
+        int endX = endTile.GetComponent<TileProp>().tileNumX;
+        int endZ = endTile.GetComponent<TileProp>().tileNumZ;
+
+        return Mathf.Abs(endX - startX) + Mathf.Abs(endZ - startZ);
+    }
 }

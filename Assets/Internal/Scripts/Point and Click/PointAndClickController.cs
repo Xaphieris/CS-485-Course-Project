@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
@@ -34,6 +35,11 @@ public class PointAndClickController : MonoBehaviour
         }
     }
 
+    //Need to DO:
+    //  Create a Get Selection Method
+    //      Determine Actions from selection
+    //          Traversal Script, in UNIT, pass path from pathfinding?
+
     // Update is called once per frame
     void Update()
     {
@@ -63,12 +69,12 @@ public class PointAndClickController : MonoBehaviour
                 //Check is the last selection is null
                 if(lastSelectedObject != null)
                 {
-                    Debug.Log("Last Selected Object:" + lastSelectedObject.name);
-                    Debug.Log("Current Selected Object:" + currentSelectedObject.name);
-                    Debug.Log("Last Selected Has Player Unit: " + lastSelectedObject.GetComponent<TileProp>().hasPlayerUnit);
+                    // Debug.Log("Last Selected Object:" + lastSelectedObject.name);
+                    // Debug.Log("Current Selected Object:" + currentSelectedObject.name);
+                    // Debug.Log("Last Selected Has Player Unit: " + lastSelectedObject.GetComponent<TileProp>().hasPlayerUnit);
 
                     //Move player unit if player tile was selected last, and new tile does not have player
-                    if(lastSelectedObject.GetComponent<TileProp>().hasPlayerUnit == true && CanTraverse(currentSelectedObject))
+                    if(lastSelectedObject.GetComponent<TileProp>().hasPlayerUnit)
                     {
                         Traverse(lastSelectedObject, currentSelectedObject);
                         currentSelectedObject = null;
@@ -87,6 +93,7 @@ public class PointAndClickController : MonoBehaviour
         }
     }
 
+    //Obsolete
     //Check for ability for player unit to move
     private bool CanTraverse(GameObject selection)
     {
@@ -106,11 +113,26 @@ public class PointAndClickController : MonoBehaviour
     private void Traverse(GameObject lastSelection, GameObject currentSelection)
     {
         GameObject unit = GameObject.Find("Player Unit 1");
+
+        TileProp lastSelTileProp = lastSelectedObject.GetComponent<TileProp>();
+        TileProp currentSelTileProp = currentSelectedObject.GetComponent<TileProp>();
         
-        unit.transform.position = currentSelection.transform.position;
+        List<TileProp> path = PathFinding.FindPath(lastSelTileProp, currentSelTileProp);
+
+        //unit.transform.position = currentSelection.transform.position;
+        path.Reverse();
+        foreach (var t in path)
+        {
+            Debug.Log("Tile Traversed: " + t.tileNumX + ", " + t.tileNumZ);
+        }
+
         lastSelection.GetComponent<TileProp>().hasPlayerUnit = false;
         currentSelection.GetComponent<TileProp>().hasPlayerUnit = true;
 
         Debug.Log("Traversed");
     }
+
+    //Selection method
+    //  Determine what was selected
+    // 
 }
