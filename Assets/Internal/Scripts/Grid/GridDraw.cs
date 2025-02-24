@@ -58,6 +58,11 @@ public class GridDraw : MonoBehaviour
                 clone.GetComponent<TileProp>().tileNumX = (int)x;
                 clone.GetComponent<TileProp>().tileNumZ = (int)z;
                 Debug.Log("Modified Clone Properties");
+
+                if(x == 0 && z == 0)
+                {
+                    clone.GetComponent<TileProp>().hasPlayerUnit = true;
+                }
             }
         }
     }
