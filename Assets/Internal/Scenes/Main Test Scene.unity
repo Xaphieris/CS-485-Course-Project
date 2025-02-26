@@ -164,6 +164,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31360979f8f372546b89729dd9633baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerUnitXBound: 2
+  enemyUnitXBound: 8
+  numberOfPlayerUnits: 1
+  numberOfEnemyUnits: 2
+  enemy: {fileID: 189519118542365749, guid: 03a78a9897c18254cb1fa0125f17f2eb, type: 3}
+  player: {fileID: 7395953555620725520, guid: bbf32f21e954cec4090f7b62518e4d14, type: 3}
   block: {fileID: 1027144338041134, guid: 8d65fe10dbb32e34aa703943ab85d9c0, type: 3}
   width: 10
   height: 10
@@ -226,8 +232,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -355,8 +361,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -484,8 +490,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -613,8 +619,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -742,8 +748,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -871,8 +877,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -1000,8 +1006,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -1082,66 +1088,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209005694}
   m_Mesh: {fileID: 4300000, guid: ec55075d188c17f409c030e2fa6d4ebf, type: 3}
---- !u!1 &213139395
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 213139396}
-  - component: {fileID: 213139398}
-  - component: {fileID: 213139397}
-  m_Layer: 0
-  m_Name: Enemy Unit 1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &213139396
+--- !u!4 &213139396 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 4773447097179081104, guid: 03a78a9897c18254cb1fa0125f17f2eb, type: 3}
+  m_PrefabInstance: {fileID: 3285021421117790909}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 213139395}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.5, y: 0, z: 7.794}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1843715621}
-  m_Father: {fileID: 774037863}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &213139397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 213139395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf3507d0ebde49a43abee6cf4d7675f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &213139398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 213139395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c23e7d0219caefe41890d59981e25f93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  armor: 0
 --- !u!1 &226638906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,8 +1172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -1350,8 +1301,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -1479,8 +1430,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -1608,8 +1559,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -1737,8 +1688,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -1866,8 +1817,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -1948,11 +1899,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395683711}
   m_Mesh: {fileID: 4300000, guid: ec55075d188c17f409c030e2fa6d4ebf, type: 3}
---- !u!4 &415492247 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1084066663127890756, guid: 066e771bcb048a643b4ef5d4554f90e5, type: 3}
-  m_PrefabInstance: {fileID: 1025463459}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &427538984
 GameObject:
   m_ObjectHideFlags: 0
@@ -2000,8 +1946,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -2129,8 +2075,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -2258,8 +2204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -2448,79 +2394,16 @@ MonoBehaviour:
   moveSensitivity: 100
   minOrbitRadius: 5
   maxOrbitRadius: 35
---- !u!1 &563771912
+--- !u!1 &563771912 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 7395953555620725520, guid: bbf32f21e954cec4090f7b62518e4d14, type: 3}
+  m_PrefabInstance: {fileID: 5044297219482272214}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 563771913}
-  - component: {fileID: 563771915}
-  - component: {fileID: 563771914}
-  - component: {fileID: 563771916}
-  m_Layer: 0
-  m_Name: Player Unit 1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &563771913
+--- !u!4 &563771913 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 811254832026968759, guid: bbf32f21e954cec4090f7b62518e4d14, type: 3}
+  m_PrefabInstance: {fileID: 5044297219482272214}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 563771912}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 415492247}
-  m_Father: {fileID: 226638907}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &563771914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 563771912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eee63dffd2f3e5a4e86208881a667e83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &563771915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 563771912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c94a120bbf1a10640b452f09dc2ef132, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &563771916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 563771912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e0c55d7f2112a8468f0ab503f29f173, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  armor: 0
 --- !u!1 &570974764
 GameObject:
   m_ObjectHideFlags: 0
@@ -2568,8 +2451,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -2683,7 +2566,8 @@ MonoBehaviour:
   mouseClick: 0
   cam: {fileID: 469387810}
   marker: {fileID: 2060042136}
-  selectionBox: {fileID: 100000, guid: 3473d0131f929c8498dd62c83ef0056e, type: 3}
+  selectionBoxRed: {fileID: 1503345923647216, guid: 4de53d3dd25d2ae46948b7b1d46b6d55, type: 3}
+  selectionBoxWhite: {fileID: 1567869443710866, guid: b9c5ab851b762b74f8bcba314257140c, type: 3}
 --- !u!4 &591413184
 Transform:
   m_ObjectHideFlags: 0
@@ -2746,8 +2630,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -2875,8 +2759,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -3004,8 +2888,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -3133,8 +3017,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -3262,8 +3146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -3391,8 +3275,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -3520,8 +3404,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -3649,8 +3533,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -3778,8 +3662,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -4004,8 +3888,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -4133,8 +4017,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -4262,8 +4146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -4391,8 +4275,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -4552,8 +4436,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -4681,8 +4565,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -4810,8 +4694,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -4939,8 +4823,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -5068,8 +4952,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -5197,8 +5081,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -5326,8 +5210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -5455,8 +5339,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -5584,8 +5468,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -5713,8 +5597,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -5949,8 +5833,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -6078,8 +5962,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -6207,8 +6091,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -6336,8 +6220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -6418,75 +6302,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016587326}
   m_Mesh: {fileID: 4300000, guid: ec55075d188c17f409c030e2fa6d4ebf, type: 3}
---- !u!1001 &1025463459
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 563771913}
-    m_Modifications:
-    - target: {fileID: 306438625495933438, guid: 066e771bcb048a643b4ef5d4554f90e5, type: 3}
-      propertyPath: m_Name
-      value: unit_Tank_Heavy_A_yup
-      objectReference: {fileID: 0}
-    - target: {fileID: 1084066663127890756, guid: 066e771bcb048a643b4ef5d4554f90e5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1084066663127890756, guid: 066e771bcb048a643b4ef5d4554f90e5, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1084066663127890756, guid: 066e771bcb048a643b4ef5d4554f90e5, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1084066663127890756, guid: 066e771bcb048a643b4ef5d4554f90e5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1084066663127890756, guid: 066e771bcb048a643b4ef5d4554f90e5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1084066663127890756, guid: 066e771bcb048a643b4ef5d4554f90e5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1084066663127890756, guid: 066e771bcb048a643b4ef5d4554f90e5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1084066663127890756, guid: 066e771bcb048a643b4ef5d4554f90e5, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1084066663127890756, guid: 066e771bcb048a643b4ef5d4554f90e5, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1084066663127890756, guid: 066e771bcb048a643b4ef5d4554f90e5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1084066663127890756, guid: 066e771bcb048a643b4ef5d4554f90e5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1084066663127890756, guid: 066e771bcb048a643b4ef5d4554f90e5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1084066663127890756, guid: 066e771bcb048a643b4ef5d4554f90e5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 066e771bcb048a643b4ef5d4554f90e5, type: 3}
 --- !u!1 &1044825565
 GameObject:
   m_ObjectHideFlags: 0
@@ -6534,8 +6349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -6663,8 +6478,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -6792,8 +6607,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -6921,8 +6736,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -7050,8 +6865,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -7179,8 +6994,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -7308,8 +7123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -7437,8 +7252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -7566,8 +7381,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -7695,8 +7510,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -7824,8 +7639,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -7953,8 +7768,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -8082,8 +7897,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -8211,8 +8026,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -8340,8 +8155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -8469,8 +8284,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -8598,8 +8413,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -8727,8 +8542,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -8856,8 +8671,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -8985,8 +8800,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -9114,8 +8929,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -9243,8 +9058,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -9372,8 +9187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -9501,8 +9316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 1
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -9630,8 +9445,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -9759,8 +9574,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -9888,8 +9703,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -10017,8 +9832,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -10146,8 +9961,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -10275,8 +10090,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -10404,8 +10219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -10533,8 +10348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -10644,9 +10459,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31360979f8f372546b89729dd9633baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerUnitXBound: 2
+  enemyUnitXBound: 8
+  numberOfPlayerUnits: 1
+  numberOfEnemyUnits: 2
+  enemy: {fileID: 0}
+  player: {fileID: 0}
   block: {fileID: 1027144338041134, guid: 8d65fe10dbb32e34aa703943ab85d9c0, type: 3}
-  width: 10
-  height: 10
+  width: 0
+  height: 0
 --- !u!4 &1681458304
 Transform:
   m_ObjectHideFlags: 0
@@ -10809,8 +10630,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -10938,8 +10759,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -11067,8 +10888,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -11196,8 +11017,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -11325,8 +11146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -11454,8 +11275,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -11583,8 +11404,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -11712,8 +11533,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -11794,104 +11615,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1788267728}
   m_Mesh: {fileID: 4300000, guid: ec55075d188c17f409c030e2fa6d4ebf, type: 3}
---- !u!1001 &1843715620
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 213139396}
-    m_Modifications:
-    - target: {fileID: 416990775526121320, guid: b9d308d9f071bbc46be660ddc91ca2ee, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 03993c9801677ca4b9741101b3033488, type: 2}
-    - target: {fileID: 1549904825066890247, guid: b9d308d9f071bbc46be660ddc91ca2ee, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549904825066890247, guid: b9d308d9f071bbc46be660ddc91ca2ee, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549904825066890247, guid: b9d308d9f071bbc46be660ddc91ca2ee, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549904825066890247, guid: b9d308d9f071bbc46be660ddc91ca2ee, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549904825066890247, guid: b9d308d9f071bbc46be660ddc91ca2ee, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549904825066890247, guid: b9d308d9f071bbc46be660ddc91ca2ee, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549904825066890247, guid: b9d308d9f071bbc46be660ddc91ca2ee, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549904825066890247, guid: b9d308d9f071bbc46be660ddc91ca2ee, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549904825066890247, guid: b9d308d9f071bbc46be660ddc91ca2ee, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549904825066890247, guid: b9d308d9f071bbc46be660ddc91ca2ee, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549904825066890247, guid: b9d308d9f071bbc46be660ddc91ca2ee, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549904825066890247, guid: b9d308d9f071bbc46be660ddc91ca2ee, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549904825066890247, guid: b9d308d9f071bbc46be660ddc91ca2ee, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2218461069028294333, guid: b9d308d9f071bbc46be660ddc91ca2ee, type: 3}
-      propertyPath: m_Name
-      value: unit_Tank_Combat_B_yup
-      objectReference: {fileID: 0}
-    - target: {fileID: 4737541478966161887, guid: b9d308d9f071bbc46be660ddc91ca2ee, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 03993c9801677ca4b9741101b3033488, type: 2}
-    - target: {fileID: 5409456296903071416, guid: b9d308d9f071bbc46be660ddc91ca2ee, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5409456296903071416, guid: b9d308d9f071bbc46be660ddc91ca2ee, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5409456296903071416, guid: b9d308d9f071bbc46be660ddc91ca2ee, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5409456296903071416, guid: b9d308d9f071bbc46be660ddc91ca2ee, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b9d308d9f071bbc46be660ddc91ca2ee, type: 3}
---- !u!4 &1843715621 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1549904825066890247, guid: b9d308d9f071bbc46be660ddc91ca2ee, type: 3}
-  m_PrefabInstance: {fileID: 1843715620}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1843815600
 GameObject:
   m_ObjectHideFlags: 0
@@ -11939,8 +11662,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -12068,8 +11791,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -12197,8 +11920,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -12326,8 +12049,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -12455,8 +12178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -12584,8 +12307,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -12713,8 +12436,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -12842,8 +12565,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -12971,8 +12694,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -13100,8 +12823,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -13315,8 +13038,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -13444,8 +13167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -13573,8 +13296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -13702,8 +13425,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -13831,8 +13554,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -13960,8 +13683,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7a394687f6bb644aafd274525f9788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTraverse: 1
   hasPlayerUnit: 0
+  hasEnemyUnit: 0
   isTraversable: 1
   tileNumX: 0
   tileNumZ: 0
@@ -14042,6 +13765,128 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2142225165}
   m_Mesh: {fileID: 4300000, guid: ec55075d188c17f409c030e2fa6d4ebf, type: 3}
+--- !u!1001 &3285021421117790909
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 774037863}
+    m_Modifications:
+    - target: {fileID: 189519118542365749, guid: 03a78a9897c18254cb1fa0125f17f2eb, type: 3}
+      propertyPath: m_Name
+      value: Enemy Unit 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 189519118542365749, guid: 03a78a9897c18254cb1fa0125f17f2eb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773447097179081104, guid: 03a78a9897c18254cb1fa0125f17f2eb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773447097179081104, guid: 03a78a9897c18254cb1fa0125f17f2eb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773447097179081104, guid: 03a78a9897c18254cb1fa0125f17f2eb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.794
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773447097179081104, guid: 03a78a9897c18254cb1fa0125f17f2eb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773447097179081104, guid: 03a78a9897c18254cb1fa0125f17f2eb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773447097179081104, guid: 03a78a9897c18254cb1fa0125f17f2eb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773447097179081104, guid: 03a78a9897c18254cb1fa0125f17f2eb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773447097179081104, guid: 03a78a9897c18254cb1fa0125f17f2eb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773447097179081104, guid: 03a78a9897c18254cb1fa0125f17f2eb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773447097179081104, guid: 03a78a9897c18254cb1fa0125f17f2eb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 03a78a9897c18254cb1fa0125f17f2eb, type: 3}
+--- !u!1001 &5044297219482272214
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 226638907}
+    m_Modifications:
+    - target: {fileID: 811254832026968759, guid: bbf32f21e954cec4090f7b62518e4d14, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811254832026968759, guid: bbf32f21e954cec4090f7b62518e4d14, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811254832026968759, guid: bbf32f21e954cec4090f7b62518e4d14, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811254832026968759, guid: bbf32f21e954cec4090f7b62518e4d14, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 811254832026968759, guid: bbf32f21e954cec4090f7b62518e4d14, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811254832026968759, guid: bbf32f21e954cec4090f7b62518e4d14, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811254832026968759, guid: bbf32f21e954cec4090f7b62518e4d14, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811254832026968759, guid: bbf32f21e954cec4090f7b62518e4d14, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811254832026968759, guid: bbf32f21e954cec4090f7b62518e4d14, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811254832026968759, guid: bbf32f21e954cec4090f7b62518e4d14, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395953555620725520, guid: bbf32f21e954cec4090f7b62518e4d14, type: 3}
+      propertyPath: m_Name
+      value: Player Unit 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395953555620725520, guid: bbf32f21e954cec4090f7b62518e4d14, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bbf32f21e954cec4090f7b62518e4d14, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

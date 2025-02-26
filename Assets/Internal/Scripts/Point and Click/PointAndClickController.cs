@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Collections;
 
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class PointAndClickController : MonoBehaviour
 {
@@ -16,23 +17,37 @@ public class PointAndClickController : MonoBehaviour
 
     public bool playerUnitSelected = false;
 
+    LayerMask layerMask;
+
     public mouseButtonCode mouseClick = mouseButtonCode.leftMouse;
     public Camera cam = null;
     public Transform marker = null;
     private GameObject lastSelectedObject;
     private GameObject currentSelectedObject;
-    public GameObject selectionBox;
+    public GameObject selectionBoxRed;
+    public GameObject selectionBoxWhite;
+    private GameObject selectionBoxCloneRed;
+    private GameObject selectionBoxCloneWhite;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
+        layerMask = LayerMask.GetMask("Tile");
+        
         if(this.cam == null)
         {
             this.cam = Camera.main;
         }
-        if(this.selectionBox == null)
+        if(this.selectionBoxRed == null)
         {
-            selectionBox = (GameObject)Resources.Load("Assets/External/Low Poly Hexagons/Assets/Prefabs/Objects/SelectionRed.prefab");
+            //I don't think this works
+            selectionBoxRed = (GameObject)Resources.Load("Assets/External/Low Poly Hexagons/Assets/Prefabs/Objects/SelectionRed.prefab");
+        }
+        if(this.selectionBoxWhite == null)
+        {
+            //I don't think this works
+            selectionBoxWhite = (GameObject)Resources.Load("Assets/External/Low Poly Hexagons/Assets/Prefabs/Objects/SelectionWhite.prefab");
         }
     }
 
@@ -48,39 +63,46 @@ public class PointAndClickController : MonoBehaviour
         {
             //Get mouse cursor screen position
             Vector3 mouseCurrentPos = Input.mousePosition;
-            Debug.Log("Mouse pressed at: " + mouseCurrentPos.x + ", " + mouseCurrentPos.y);
+            //Debug.Log("Mouse pressed at: " + mouseCurrentPos.x + ", " + mouseCurrentPos.y);
 
             //Convert mouse cursor position into 3D mouse-ray
             Ray mouseRay = cam.ScreenPointToRay(mouseCurrentPos);
-            Debug.DrawRay(mouseRay.origin, mouseRay.direction * 10, Color.yellow);
+            //Debug.DrawRay(mouseRay.origin, mouseRay.direction * 10, Color.yellow);
 
-            
             RaycastHit hitInfo;
             
             //Check if mouse-ray hits anything
-            if(Physics.Raycast(mouseRay, out hitInfo, 100.0F))
+            if(Physics.Raycast(mouseRay, out hitInfo, 100.0F, layerMask))
             {
                 Debug.Log("Ray hit: " + hitInfo.collider.name);
                 
                 //Establish current selected tile
-                currentSelectedObject = hitInfo.collider.gameObject;
+                Selected(hitInfo.collider.gameObject);
 
-                //Instantiate(selectionBox, currentSelectedObject.transform.position, Quaternion.identity);
+
+                //currentSelectedObject = hitInfo.collider.gameObject;
 
                 //Check is the last selection is null
-                if(lastSelectedObject != null)
-                {
-                    // Debug.Log("Last Selected Object:" + lastSelectedObject.name);
-                    // Debug.Log("Current Selected Object:" + currentSelectedObject.name);
-                    // Debug.Log("Last Selected Has Player Unit: " + lastSelectedObject.GetComponent<TileProp>().hasPlayerUnit);
+                // if(lastSelectedObject != null)
+                // {
+                //     // Debug.Log("Last Selected Object:" + lastSelectedObject.name);
+                //     // Debug.Log("Current Selected Object:" + currentSelectedObject.name);
+                //     // Debug.Log("Last Selected Has Player Unit: " + lastSelectedObject.GetComponent<TileProp>().hasPlayerUnit);
 
-                    //Move player unit if player tile was selected last, and new tile does not have player
-                    if(lastSelectedObject.GetComponent<TileProp>().hasPlayerUnit)
-                    {
-                        Traverse(lastSelectedObject, currentSelectedObject);
-                        currentSelectedObject = null;
-                    }
-                }
+                //     //Move player unit if player tile was selected last, and new tile does not have player
+                //     if(lastSelectedObject.GetComponent<TileProp>().hasPlayerUnit)
+                //     {
+                //         TileProp lastSelTileProp = lastSelectedObject.GetComponent<TileProp>();
+                //         TileProp currentSelTileProp = currentSelectedObject.GetComponent<TileProp>();
+
+                //         List<TileProp> path = PathFinding.FindPath(lastSelTileProp, currentSelTileProp);
+
+                //         GameObject unit = getPlayerUnit();
+
+                //         unit.GetComponent<PlayerUnitController>().Traverse(lastSelectedObject, currentSelectedObject, path);
+                //         currentSelectedObject = null;
+                //     }
+                // }
 
 
                 if(this.marker != null)
@@ -91,79 +113,83 @@ public class PointAndClickController : MonoBehaviour
                 lastSelectedObject = currentSelectedObject;
                 currentSelectedObject = null;
             }
-        }
-    }
 
-    //Obsolete
-    //Check for ability for player unit to move
-    private bool CanTraverse(GameObject selection)
-    {
-        if(selection.GetComponent<TileProp>().hasPlayerUnit)
-        {
-            Debug.Log("Cannot Traverse");
-            return false;
-        }
-        else
-        {
-            Debug.Log("Can Traverse");
-            return true;
-        }
-    }
-
-    //Move player unit to selected tile
-    private void Traverse(GameObject lastSelection, GameObject currentSelection)
-    {
-        GameObject unit = GameObject.Find("Player Unit 1");
-        Vector3 tilePos;
-
-        int count;
-        float xDiff, zDiff;
-        float moveSpeed = 0.001f;
-
-        TileProp lastSelTileProp = lastSelectedObject.GetComponent<TileProp>();
-        TileProp currentSelTileProp = currentSelectedObject.GetComponent<TileProp>();
-        
-        List<TileProp> path = PathFinding.FindPath(lastSelTileProp, currentSelTileProp);
-
-        //unit.transform.position = currentSelection.transform.position;
-        path.Reverse();
-
-        //This runs all within one frame, that is a problem
-        //Need to move a little bit each frame, not all at once on a stack
-        //Need to send to unit script?
-        foreach (var t in path)
-        {
-            count = 0;
-
-            Debug.Log("Tile Traversed: " + t.tileNumX + ", " + t.tileNumZ);
-            tilePos = t.transform.position;
-            unit.transform.LookAt(t.transform);
-            
-            xDiff = tilePos.x - unit.transform.position.x;
-            zDiff = tilePos.z - unit.transform.position.z;
-
-            while(unit.transform.position.x < tilePos.x)
+            //Did not hit
+            else
             {
-                unit.transform.position += new Vector3(xDiff * moveSpeed * Time.deltaTime, 0, zDiff * moveSpeed  * Time.deltaTime);
-
-                Debug.Log("Unit Position: " + unit.transform.position.x + ", " + unit.transform.position.z);
-
-                count++;
+                clearSelectionBoxes();
             }
         }
-
-        lastSelection.GetComponent<TileProp>().hasPlayerUnit = false;
-        currentSelection.GetComponent<TileProp>().hasPlayerUnit = true;
-
-        Debug.Log("Traversed");
     }
+
 
     //Selection method
     //  Determine what was selected
     // 
 
-    public void Selection()
+    public void Selected(GameObject selection)
     {
+        currentSelectedObject = selection;
 
+        //Destroy Old selection marker
+        if(selectionBoxCloneRed != null)
+        {
+            Destroy(selectionBoxCloneRed);
+        }
+        
+        //Check selection
+        if(selection.GetComponent<TileProp>().hasPlayerUnit)
+        {
+            //Select player unit
+            playerUnitSelected = true;
+            selectionBoxCloneWhite = Instantiate(selectionBoxWhite, selection.transform.position, Quaternion.identity);
+            return;
+        }
+        else
+        {
+            selectionBoxCloneRed = Instantiate(selectionBoxRed, selection.transform.position, Quaternion.identity);
+        }
+
+        //If player is selected, do action
+        if(playerUnitSelected)
+        {
+            if(lastSelectedObject != null)
+            {
+                //Player Actions
+                TileProp lastSelTileProp = lastSelectedObject.GetComponent<TileProp>();
+                TileProp currentSelTileProp = currentSelectedObject.GetComponent<TileProp>();
+
+                List<TileProp> path = PathFinding.FindPath(lastSelTileProp, currentSelTileProp);
+
+                GameObject unit = getPlayerUnit();
+                unit.GetComponent<PlayerUnitController>().Traverse(lastSelectedObject, currentSelectedObject, path);
+                currentSelectedObject = null;
+
+                clearSelectionBoxes();
+
+                playerUnitSelected = false;
+            }
+
+            lastSelectedObject = currentSelectedObject;
+        }
+    }
+
+    public GameObject getPlayerUnit()
+    {
+        //Change this later to get the player unit from the hextile prop
+        GameObject unit = lastSelectedObject.GetComponent<TileProp>().unit;
+        return unit;
+    }
+
+    public void clearSelectionBoxes()
+    {
+        if(selectionBoxCloneWhite != null)
+        {
+            Destroy(selectionBoxCloneWhite);
+        } 
+        if(selectionBoxCloneRed != null)
+        {
+            Destroy(selectionBoxCloneRed);
+        }
     }
 }

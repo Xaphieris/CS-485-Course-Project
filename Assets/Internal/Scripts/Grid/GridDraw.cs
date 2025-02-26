@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEditor;
 using UnityEditor.SearchService;
 using UnityEngine;
@@ -5,15 +6,23 @@ using UnityEngine.Tilemaps;
 
 public class GridDraw : MonoBehaviour
 {
+    public int playerUnitXBound = 2;
+    public int enemyUnitXBound = 8;
+    public int numberOfPlayerUnits = 1;
+    public int numberOfEnemyUnits = 2;
+
+    public GameObject enemy;
+    public GameObject player;
+
     //Set Game Object to spawn
     public GameObject block;
     public GameObject[,] tiles;
 
     //Set number of tiles wide
-    public float width;
+    public int width;
 
     //Set number of tiles high
-    public float height;
+    public int height;
 
     //Offsets for hexagons
     private float xOffset = .5f;
@@ -21,10 +30,13 @@ public class GridDraw : MonoBehaviour
     //Height offset ((Tilesize)/2sin(60))*(3/2);
     private float zOffset = .866f;
   
+    //Need to add something to get a selection pool of tiles
     void Start()
     {
         CreateTiles();
         SetAllConnectedTiles();
+        PlaceEnemyUnits();
+        PlacePlayerUnits();
     }
 
     void Update()
@@ -32,9 +44,10 @@ public class GridDraw : MonoBehaviour
         
     }
 
+    //Instantiate all tiles of the grid
     private void CreateTiles()
     {
-        tiles = new GameObject[(int)width,(int)height];
+        tiles = new GameObject[width,height];
         for (float z = 0; z < height; ++z)
         {
             for (float x = 0; x < width; ++x)
@@ -48,17 +61,22 @@ public class GridDraw : MonoBehaviour
                 {
                     clone = Instantiate(block, new Vector3(x,0,0) + new Vector3 (0, 0, z) * zOffset + new Vector3(1, 0, 0) * xOffset, Quaternion.identity, this.transform);
                 }
-                Debug.Log("Created Clone");
+                //Debug.Log("Created Clone");
 
                 tiles[(int)x,(int)z] = clone;
-                Debug.Log("Added Clone to Tile List");
+                //Debug.Log("Added Clone to Tile List");
                 
+                //**************************************************
+                //Set Clone Properties
+                //**************************************************
                 clone.name = "Tile " + x + ", " + z;
                 
                 clone.GetComponent<TileProp>().tileNumX = (int)x;
                 clone.GetComponent<TileProp>().tileNumZ = (int)z;
-                Debug.Log("Modified Clone Properties");
+                //Debug.Log("Modified Clone Properties");
 
+
+                //Hard coded player position
                 if(x == 0 && z == 0)
                 {
                     clone.GetComponent<TileProp>().hasPlayerUnit = true;
@@ -67,6 +85,61 @@ public class GridDraw : MonoBehaviour
         }
     }
 
+    private void PlacePlayerUnits()
+    {
+        GameObject tile;
+        GameObject playerUnit;
+        for(int i = 1; i <= numberOfPlayerUnits; i++)
+        {
+            tile = GetTraversableTile(0,playerUnitXBound);
+
+            //Set object type, physical position, rotation, parent
+            playerUnit = Instantiate(player, tile.transform.position, Quaternion.identity, GameObject.Find("Player Units").transform);
+
+            //Set enemy unit name
+            playerUnit.name = "PlayerUnit: " + i;
+            
+            //Set properties so that tile knows it has enemy unit
+            tile.GetComponent<TileProp>().hasPlayerUnit = true;
+            tile.GetComponent<TileProp>().unit = playerUnit;
+
+            //Set Unit Properties
+        }        
+    }
+
+    private void PlaceEnemyUnits()
+    {
+        GameObject tile;
+        GameObject enemyUnit;
+        for(int i = 1; i <= numberOfEnemyUnits; i++)
+        {
+            tile = GetTraversableTile(enemyUnitXBound, width);
+
+            //Set object type, physical position, rotation, parent
+            enemyUnit = Instantiate(enemy, tile.transform.position, Quaternion.identity, GameObject.Find("Enemy Units").transform);
+
+            //Set enemy unit name
+            enemyUnit.name = "EnemyUnit: " + i;
+            
+            //Set properties so that tile knows it has enemy unit
+            tile.GetComponent<TileProp>().hasEnemyUnit = true;
+            tile.GetComponent<TileProp>().unit = enemyUnit;
+
+            //Set Unit Properties
+        }
+    }
+
+    private GameObject GetTraversableTile(int xBoundLow, int xBoundHigh)
+    {
+        GameObject tile;
+        //Check tile to ensure it is traversable
+
+        tile = tiles[UnityEngine.Random.Range(xBoundLow, xBoundHigh), UnityEngine.Random.Range(0, height)];
+
+        return tile; 
+    }
+
+    //Get neighboring tiles
     private void SetAllConnectedTiles()
     {
         GameObject tile;
@@ -90,6 +163,8 @@ public class GridDraw : MonoBehaviour
                      [x,z-1][x+1,z-1]
 
                     If statements move ccw from top left
+
+                    Checks to determine if a set of coordinates is within the grid, then add that neighbor
                 */
 
                 if(z % 2 == 0)//Even
