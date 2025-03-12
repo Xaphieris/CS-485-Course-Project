@@ -159,19 +159,24 @@ public class PointAndClickController : MonoBehaviour
                 TileProp lastSelTileProp = lastSelectedObject.GetComponent<TileProp>();
                 TileProp currentSelTileProp = currentSelectedObject.GetComponent<TileProp>();
 
-                List<TileProp> path = PathFinding.FindPath(lastSelTileProp, currentSelTileProp);
+                if(currentSelectedObject.GetComponent<TileProp>().Traverability())
+                {
+                    List<TileProp> path = PathFinding.FindPath(lastSelTileProp, currentSelTileProp);
 
-                GameObject unit = getPlayerUnit();
-                unit.GetComponent<PlayerUnitController>().Traverse(lastSelectedObject, currentSelectedObject, path);
-                currentSelectedObject = null;
-
+                    GameObject unit = getPlayerUnit();
+                    unit.GetComponent<PlayerUnitController>().Traverse(lastSelectedObject, currentSelectedObject, path);
+                    currentSelectedObject = null;
+                }
+ 
                 clearSelectionBoxes();
-
                 playerUnitSelected = false;
+ 
+                lastSelectedObject = null;
+                currentSelectedObject = null;
             }
-
-            lastSelectedObject = currentSelectedObject;
         }
+
+        lastSelectedObject = currentSelectedObject;
     }
 
     public GameObject getPlayerUnit()

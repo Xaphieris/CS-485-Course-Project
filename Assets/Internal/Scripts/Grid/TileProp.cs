@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TileProp : MonoBehaviour
@@ -16,36 +17,66 @@ public class TileProp : MonoBehaviour
     //Pathfinding
     public List<TileProp> Neighbors;
     public TileProp Connection { get; private set; }
-    public int G { get; private set; }
-    public int H { get; private set; }
-    public int F { get; private set; }
+    public float G { get; private set; }
+    public float H { get; private set; }
+    public float F { get; private set; }
 
     //Container for game object residing on tile
     public GameObject unit;
 
-    public void SetConnection(TileProp tileprop) {
+    public void Update()
+    {
+        if(!Traverability())
+        {
+            this.transform.GetChild(0).gameObject.SetActive(false);
+        }
+        else
+        {
+            this.transform.GetChild(0).gameObject.SetActive(true);
+        }
+    }
+
+    //Set connection to another tile
+    public void SetConnection(TileProp tileprop) 
+    {
         Connection = tileprop;
     }
 
-    public void SetG(int g)
+    //Set distance from start tile to this tile
+    public void SetG(float g)
     {
         G = g;
         SetF();
     }
 
-    public void SetH(int h)
+    //Set distance to end tile
+    public void SetH(float h)
     {
         H = h;
         SetF();
     }
 
+    //Set the F value (combination of distance from start to this tile, and distance from this tile to end tile)
     public void SetF()
     {
         F = G + H;
     }
 
-    public int GetDistance(TileProp endTile)
+    //Get distance between this tile and a target tile
+    public float GetDistance(TileProp endTile)
     {
-        return Mathf.Abs(endTile.tileNumX - this.tileNumX) + Mathf.Abs(endTile.tileNumZ - this.tileNumZ);
+        //return Mathf.Abs(endTile.tileNumX - this.tileNumX) + Mathf.Abs(endTile.tileNumZ - this.tileNumZ);
+        return Mathf.Round(Vector3.Distance(endTile.transform.position, this.transform.position));
+    }
+
+    //Check is the tile is taversable
+    public bool Traverability()
+    {
+        if(!isTraversable || hasEnemyUnit || hasPlayerUnit)
+        {
+            return false;
+        }
+
+        return true;
     }
 }

@@ -8,7 +8,9 @@ public class PlayerUnitController : MonoBehaviour
     Vector3 tilePos;
 
     float xDiff, zDiff, distance;
-    public float moveSpeed = 0.1f;
+
+    //Proportional speed, max of 1
+    public float moveSpeed = 1.5f;
 
     private IEnumerator moveU;
 
@@ -55,20 +57,20 @@ public class PlayerUnitController : MonoBehaviour
 
             distance = Vector3.Distance(this.transform.position, tilePos);
 
-            while(distance >= moveSpeed)
+            while(distance >= moveSpeed * Time.deltaTime)
             {
                 distance = Vector3.Distance(this.transform.position, tilePos);
-                if(distance <= moveSpeed)
+                if(distance <= moveSpeed * Time.deltaTime)
                 {
                     this.transform.position = tilePos;
                 }
                 else
                 {
-                    this.transform.position += new Vector3(xDiff * moveSpeed, 0, zDiff * moveSpeed);
+                    this.transform.position += new Vector3(xDiff * moveSpeed * Time.deltaTime, 0, zDiff * moveSpeed * Time.deltaTime);
                 }
 
 
-                Debug.Log("Unit Position: " + this.transform.position.x + ", " + this.transform.position.z);
+                //Debug.Log("Unit Position: " + this.transform.position.x + ", " + this.transform.position.z + " Speed: " + moveSpeed);
 
                 yield return null;
             }
