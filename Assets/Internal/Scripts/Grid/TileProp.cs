@@ -8,6 +8,7 @@ public class TileProp : MonoBehaviour
     public bool hasPlayerUnit = false;
     public bool hasEnemyUnit = false;
     public bool isTraversable = true;
+    public bool isObstructing = false;
 
     //Tile Array Coordinates
     public int tileNumX;

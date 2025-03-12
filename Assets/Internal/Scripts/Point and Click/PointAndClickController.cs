@@ -167,6 +167,11 @@ public class PointAndClickController : MonoBehaviour
                     unit.GetComponent<PlayerUnitController>().Traverse(lastSelectedObject, currentSelectedObject, path);
                     currentSelectedObject = null;
                 }
+                else if(currentSelectedObject.GetComponent<TileProp>().unit != null)
+                {
+                    GameObject unit = getPlayerUnit();
+                    unit.GetComponent<PlayerUnitController>().Attack_1(currentSelectedObject);
+                }
  
                 clearSelectionBoxes();
                 playerUnitSelected = false;
