@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Collections;
 
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class PlayerUnitController : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class PlayerUnitController : MonoBehaviour
     public float moveSpeed = 1.5f;
 
     private IEnumerator moveU;
+
+    private int tilesCrossed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,15 +33,31 @@ public class PlayerUnitController : MonoBehaviour
     //Funtion to call the Coroutine to move a unit
     public void Traverse(GameObject lastSelection, GameObject currentSelection, List<TileProp> path)
     {
-        //unit.transform.position = currentSelection.transform.position;
-        path.Reverse();
-        moveU = moveUnit(path);
-        StartCoroutine(moveU);
+        // Make sure there is actually a path to traverse
+        if(path != null)
+        {
+            //unit.transform.position = currentSelection.transform.position;
+            path.Reverse();
+            moveU = moveUnit(path);
+            StartCoroutine(moveU);
 
-        lastSelection.GetComponent<TileProp>().hasPlayerUnit = false;
+            lastSelection.GetComponent<TileProp>().hasPlayerUnit = false;
 
-        path[this.transform.GetComponent<PlayerProp>().moveRange - 1].hasPlayerUnit = true;
-        path[this.transform.GetComponent<PlayerProp>().moveRange - 1].unit = gameObject;
+            if(path.Count >= this.transform.GetComponent<PlayerProp>().moveRange)
+            {
+                path[this.transform.GetComponent<PlayerProp>().moveRange - 1].hasPlayerUnit = true;
+                path[this.transform.GetComponent<PlayerProp>().moveRange - 1].unit = gameObject;
+                gameObject.GetComponent<PlayerProp>().tile = path[this.transform.GetComponent<PlayerProp>().moveRange - 1].transform.gameObject;
+            }
+            else
+            {
+                path[path.Count - 1].hasPlayerUnit = true;
+                path[path.Count - 1].unit = gameObject;
+                gameObject.GetComponent<PlayerProp>().tile = path[path.Count - 1].transform.gameObject;
+            }
+        }
+
+
 
         //Assumes inf move speed
         //currentSelection.GetComponent<TileProp>().hasPlayerUnit = true;
@@ -49,7 +68,7 @@ public class PlayerUnitController : MonoBehaviour
     //When tile is reached, move unit the rest of the way to the target to avoid overshoot. Get next tile, repeat process
     private IEnumerator moveUnit(List<TileProp> path)
     {
-        int tilesCrossed = 0;
+        tilesCrossed = 0;
         //Debug.Log("Started Coroutine");
         foreach (var t in path)
         {
@@ -93,6 +112,7 @@ public class PlayerUnitController : MonoBehaviour
         yield return null;
     }
 
+    //Attack 1
     public void Attack_1(GameObject enemyTile)
     {
         if(enemyTile.GetComponent<TileProp>().unit == null)
@@ -102,6 +122,7 @@ public class PlayerUnitController : MonoBehaviour
         else
         {
             Debug.Log("Attacking Enemy: " + enemyTile.GetComponent<TileProp>().unit.name + " for " + this.transform.GetComponent<PlayerProp>().attack_1dmg);
+            this.transform.LookAt(new Vector3(enemyTile.transform.position.x, 0, enemyTile.transform.position.z));
             enemyTile.GetComponent<TileProp>().unit.GetComponent<EnemyProp>().health -= this.transform.GetComponent<PlayerProp>().attack_1dmg;
         }
     }

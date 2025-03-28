@@ -4,9 +4,12 @@ public class PlayerProp : MonoBehaviour
 {
     public int health;
     public int armor;
+    public int baseArmor;
     public int moveRange;
+    public GameObject tile;
 
     public int attack_1dmg;
+    public int attack_1range;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

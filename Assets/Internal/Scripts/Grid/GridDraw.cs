@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Net.WebSockets;
 using Mono.Cecil;
+using TMPro;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEditor;
@@ -8,6 +9,7 @@ using UnityEditor.PackageManager.Requests;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class GridDraw : MonoBehaviour
 {
@@ -227,6 +229,12 @@ public class GridDraw : MonoBehaviour
                 // {
                 //     clone.GetComponent<TileProp>().hasPlayerUnit = true;
                 // }
+
+                if(clone.transform.GetChild(1).GetComponent<TextMeshPro>() != null)
+                {
+                    clone.transform.GetChild(1).GetComponent<TextMeshPro>().text = clone.name;
+                }
+                
             }
         }
     }
@@ -252,6 +260,7 @@ public class GridDraw : MonoBehaviour
             //Set properties so that tile knows it has enemy unit
             tile.GetComponent<TileProp>().hasPlayerUnit = true;
             tile.GetComponent<TileProp>().unit = playerUnit;
+            playerUnit.GetComponent<PlayerProp>().tile = tile;
 
             //Set Unit Properties
 
@@ -280,6 +289,7 @@ public class GridDraw : MonoBehaviour
             //Set properties so that tile knows it has enemy unit
             tile.GetComponent<TileProp>().hasEnemyUnit = true;
             tile.GetComponent<TileProp>().unit = enemyUnit;
+            enemyUnit.GetComponent<EnemyProp>().tile = tile;
 
             //Set Unit Properties
 

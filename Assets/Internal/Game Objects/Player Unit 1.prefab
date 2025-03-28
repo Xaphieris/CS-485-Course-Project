@@ -74,8 +74,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   armor: 1
-  moveRange: 3
+  baseArmor: 1
+  moveRange: 10
+  tile: {fileID: 0}
   attack_1dmg: 2
+  attack_1range: 3
 --- !u!1001 &3422630403130605413
 PrefabInstance:
   m_ObjectHideFlags: 0

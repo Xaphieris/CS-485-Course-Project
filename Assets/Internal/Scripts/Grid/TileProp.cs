@@ -27,7 +27,7 @@ public class TileProp : MonoBehaviour
 
     public void Update()
     {
-        if(!Traverability())
+        if(!Traversability())
         {
             this.transform.GetChild(0).gameObject.SetActive(false);
         }
@@ -71,8 +71,10 @@ public class TileProp : MonoBehaviour
     }
 
     //Check is the tile is taversable
-    public bool Traverability()
+    public bool Traversability()
     {
+        //if(!isTraversable || hasEnemyUnit || hasPlayerUnit)
+
         if(!isTraversable || hasEnemyUnit || hasPlayerUnit)
         {
             return false;
