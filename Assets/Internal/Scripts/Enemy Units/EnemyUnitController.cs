@@ -20,7 +20,11 @@ public class EnemyUnitController : MonoBehaviour
 
     public GameObject playerUnit;
 
+    public GameObject enemyToAttack;
+    public bool scheduleAttack;
+
     private bool enemyIsMoving;
+    private bool enemyBusy;
     private int enemiesMoved;
 
     public bool turnActive;
@@ -45,6 +49,8 @@ public class EnemyUnitController : MonoBehaviour
     void Update()
     {
         MoveEnemies();
+        //Shedule attack, wait until enemy is done moving then attack
+        //ScheduleAttack_1();
         EndTurn();
     }
 
@@ -103,7 +109,7 @@ public class EnemyUnitController : MonoBehaviour
         GameObject enemy;
         playerUnit = GameObject.Find("Player Units").transform.GetChild(1).gameObject;
 
-        if(enemiesMoved < enemies.Count && !enemyIsMoving)
+        if(enemiesMoved < enemies.Count && !enemyIsMoving && !enemyBusy)
         {
             enemy = enemies[enemiesMoved];
 
@@ -160,12 +166,19 @@ public class EnemyUnitController : MonoBehaviour
                 path[path.Count - 1].unit = enemy;
                 enemy.transform.GetComponent<EnemyProp>().tile = path[path.Count - 1].transform.gameObject;
 
-                Attack_1(enemy);
+                //Attack_1(enemy);
+                //enemyToAttack = enemy;
+                scheduleAttack = true;
+                enemyBusy = true;
                 return true;
             }
         }
         else
         {
+            if(scheduleAttack)
+            {
+                Attack_1(enemy);
+            }
             enemyIsMoving = false;
         }
 
@@ -222,6 +235,12 @@ public class EnemyUnitController : MonoBehaviour
             {
                 break;
             }
+        }
+
+        if(scheduleAttack)
+        {
+            AttackAnimation(enemy);
+            Attack_1(enemy);
         }
 
         //enemiesMoved++;
@@ -282,7 +301,11 @@ public class EnemyUnitController : MonoBehaviour
 
                     if(tile.tileNumX == enemyTile.tileNumX && tile.tileNumZ == enemyTile.tileNumZ)
                     {
-                        Attack_1(enemy);
+                        //Attack_1(enemy);
+                        //enemyToAttack = enemy;
+
+                        scheduleAttack = true;
+                        enemyBusy = true;
                         return new List<TileProp>();
                     }
 
@@ -332,7 +355,6 @@ public class EnemyUnitController : MonoBehaviour
     public void Attack_1(GameObject enemy)
     {
         Debug.Log(enemy.name + " attacking player for: " + enemy.GetComponent<EnemyProp>().attack_1dmg);
-        enemy.transform.LookAt(new Vector3(playerUnit.transform.position.x, 0, playerUnit.transform.position.z));
 
         int enemyDmg = enemy.GetComponent<EnemyProp>().attack_1dmg;
         int playerArmor = playerUnit.GetComponent<PlayerProp>().armor;
@@ -341,5 +363,25 @@ public class EnemyUnitController : MonoBehaviour
         
 
         playerUnit.GetComponent<PlayerProp>().health -= (int)Mathf.Max(0, enemyDmg-playerArmor);
+    }
+
+    public void AttackAnimation(GameObject enemy)
+    {
+        enemy.transform.LookAt(new Vector3(playerUnit.transform.position.x, 0, playerUnit.transform.position.z));
+
+        
+
+        enemyBusy = false;
+    }
+
+    //Wait to attack until after movement
+    public void ScheduleAttack_1()
+    {
+        if(!enemyIsMoving && scheduleAttack && enemyToAttack != null)
+        {
+            Attack_1(enemyToAttack);
+            scheduleAttack = false;
+            enemyToAttack = null;
+        }
     }
 }

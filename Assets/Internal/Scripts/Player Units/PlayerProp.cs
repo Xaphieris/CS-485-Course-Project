@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerProp : MonoBehaviour
 {
     public int health;
+    public int baseHealth;
     public int armor;
     public int baseArmor;
     public int moveRange;

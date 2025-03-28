@@ -1,11 +1,16 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TurnController : MonoBehaviour
 {
     public bool playerTurn;
     public bool enemyTurn;
+
+    public int turnNumber = 1;
     public GameObject pointAndClickController;
     public GameObject enemyController;
+    public TextMeshProUGUI turnText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,6 +42,7 @@ public class TurnController : MonoBehaviour
         {
             pointAndClickController.SetActive(false);
         }
+        UpdateTurn();
     }
 
     public void EndPlayerTurn()
@@ -57,6 +63,13 @@ public class TurnController : MonoBehaviour
         playerTurn = true;
         enemyTurn = false;
 
+        turnNumber++;
+        pointAndClickController.GetComponent<PointAndClickController>().playerAttacks = 1;
+        pointAndClickController.GetComponent<PointAndClickController>().playerMoves = 1;
+    }
 
+    public void UpdateTurn()
+    {
+        turnText.text = ("Turn: " + turnNumber);
     }
 }

@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System;
 using System.Numerics;
+using TMPro;
 
 public class PointAndClickController : MonoBehaviour
 {
@@ -32,6 +33,11 @@ public class PointAndClickController : MonoBehaviour
     public GameObject selectionBoxWhite;
     private GameObject selectionBoxCloneRed;
     private GameObject selectionBoxCloneWhite;
+
+    public int playerAttacks = 1;
+    public int playerMoves = 1;
+    public TextMeshProUGUI playerAttackText;
+    public TextMeshProUGUI playerMoveText;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -125,6 +131,9 @@ public class PointAndClickController : MonoBehaviour
                 clearSelectionBoxes();
             }
         }
+
+        playerAttackText.text = "Attacks: " + playerAttacks + "/" + 1;
+        playerMoveText.text = "Movement: " + playerMoves + "/" + 1;
     }
 
 
@@ -164,15 +173,16 @@ public class PointAndClickController : MonoBehaviour
                 TileProp lastSelTileProp = lastSelectedObject.GetComponent<TileProp>();
                 TileProp currentSelTileProp = currentSelectedObject.GetComponent<TileProp>();
 
-                if(currentSelectedObject.GetComponent<TileProp>().Traversability())
+                if(currentSelectedObject.GetComponent<TileProp>().Traversability() && playerMoves > 0)
                 {
                     List<TileProp> path = PathFinding.FindPath(lastSelTileProp, currentSelTileProp);
 
                     GameObject unit = getPlayerUnit();
                     unit.GetComponent<PlayerUnitController>().Traverse(lastSelectedObject, currentSelectedObject, path);
                     currentSelectedObject = null;
+                    playerMoves = 0;
                 }
-                else if(currentSelectedObject.GetComponent<TileProp>().unit != null)
+                else if(currentSelectedObject.GetComponent<TileProp>().unit != null && playerAttacks > 0)
                 {
                     GameObject unit = getPlayerUnit();
 
@@ -181,6 +191,7 @@ public class PointAndClickController : MonoBehaviour
                     if(Attack_1_pattern(unit))
                     {
                         unit.GetComponent<PlayerUnitController>().Attack_1(currentSelectedObject);
+                        playerAttacks = 0;
                     }
                     
 
@@ -254,6 +265,8 @@ public class PointAndClickController : MonoBehaviour
 
         int direction = GetDirection(xdif, zdif, tileX, tileZ);
 
+        Debug.Log("Found Direction: " + direction);
+
         UnityEngine.Vector2 currentTile = new UnityEngine.Vector2(tileX, tileZ);
         TileProp tile;
         bool foundEnemy = false;
@@ -265,6 +278,7 @@ public class PointAndClickController : MonoBehaviour
             //Ensure check is within bounds
             if(currentTile.x >= grid.width || currentTile.y >= grid.height || currentTile.x < 0 || currentTile.y < 0)
             {
+                Debug.Log("Failed to find enemy within bounds");
                 return false;
             }
 
@@ -277,8 +291,10 @@ public class PointAndClickController : MonoBehaviour
             }
             if(tile.hasEnemyUnit && tile.unit != null)
             {
-                if(tile.transform != currentSelectedObject)
+                if(tile.transform != currentSelectedObject.transform)
                 {
+                    Debug.Log("Attack blocked by another enemy");
+                    Debug.Log("Tile Obstructing, Selection: " + tile.transform.name + ", " + currentSelectedObject.name);
                     return false;
                 }
 
@@ -412,6 +428,8 @@ public class PointAndClickController : MonoBehaviour
 
     public int GetDirection(int xdif, int zdif, int tileX, int tileZ)
     {
+        Debug.Log("Finding Direction");
+
         if(zdif > 0)
         {
             if(xdif > 0)
