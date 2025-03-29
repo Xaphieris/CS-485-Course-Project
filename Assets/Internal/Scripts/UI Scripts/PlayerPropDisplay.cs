@@ -11,6 +11,7 @@ public class PlayerPropDisplay : MonoBehaviour
     public TextMeshProUGUI HealthText;
     public TextMeshProUGUI ArmorText;
     public TextMeshProUGUI PlayerUnitName;
+    private bool foundPlayer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,12 +26,14 @@ public class PlayerPropDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playerUnit == null)
+        if(playerUnit == null && !foundPlayer)
         {
             playerUnit = playerContainer.transform.GetChild(1).gameObject;
             playerProp = playerUnit.GetComponent<PlayerProp>();
 
             PlayerUnitName.text = playerUnit.name;
+
+            foundPlayer = true;
         }
 
         HealthText.text = "Health: " + playerProp.health + "/" + playerProp.baseHealth;

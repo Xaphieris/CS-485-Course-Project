@@ -19,7 +19,7 @@ public class PathFinding : MonoBehaviour
 
     public static List<TileProp> FindPath(TileProp startNode, TileProp targetNode) 
     {
-        Debug.Log("Started Path finding (Start, Target): " + startNode.transform.name + ", " + targetNode.transform.name);
+        //Debug.Log("Started Path finding (Start, Target): " + startNode.transform.name + ", " + targetNode.transform.name);
 
         //Establish lists to track what is to be processed and what has been processed
         var toSearch = new List<TileProp>() { startNode };
@@ -69,7 +69,7 @@ public class PathFinding : MonoBehaviour
                     //Debug.Log("sdfsdf");
                 }
                 
-                Debug.Log("Finished Path finding: " + path.Count);
+                //Debug.Log("Finished Path finding: " + path.Count);
                 return path;
             }
 

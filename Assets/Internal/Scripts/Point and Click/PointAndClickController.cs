@@ -36,6 +36,8 @@ public class PointAndClickController : MonoBehaviour
 
     public int playerAttacks = 1;
     public int playerMoves = 1;
+    public bool playerMoving;
+    public bool playerAttacking;
     public TextMeshProUGUI playerAttackText;
     public TextMeshProUGUI playerMoveText;
     
@@ -173,8 +175,9 @@ public class PointAndClickController : MonoBehaviour
                 TileProp lastSelTileProp = lastSelectedObject.GetComponent<TileProp>();
                 TileProp currentSelTileProp = currentSelectedObject.GetComponent<TileProp>();
 
-                if(currentSelectedObject.GetComponent<TileProp>().Traversability() && playerMoves > 0)
+                if(currentSelectedObject.GetComponent<TileProp>().Traversability() && playerMoves > 0 && !playerAttacking)
                 {
+                    playerMoving = true;
                     List<TileProp> path = PathFinding.FindPath(lastSelTileProp, currentSelTileProp);
 
                     GameObject unit = getPlayerUnit();
@@ -182,7 +185,7 @@ public class PointAndClickController : MonoBehaviour
                     currentSelectedObject = null;
                     playerMoves = 0;
                 }
-                else if(currentSelectedObject.GetComponent<TileProp>().unit != null && playerAttacks > 0)
+                else if(currentSelectedObject.GetComponent<TileProp>().unit != null && playerAttacks > 0 && !playerMoving)
                 {
                     GameObject unit = getPlayerUnit();
 
@@ -190,6 +193,7 @@ public class PointAndClickController : MonoBehaviour
 
                     if(Attack_1_pattern(unit))
                     {
+                        playerAttacking = true;
                         unit.GetComponent<PlayerUnitController>().Attack_1(currentSelectedObject);
                         playerAttacks = 0;
                     }
@@ -249,14 +253,14 @@ public class PointAndClickController : MonoBehaviour
         //Check distance
         if(lastSelectedObject.GetComponent<TileProp>().GetDistance(currentSelectedObject.GetComponent<TileProp>()) > attackRange)
         {
-            Debug.Log("Attack outside of range");
+            //Debug.Log("Attack outside of range");
             return false;
         }
 
         int xdif = targetX - tileX;
         int zdif = targetZ - tileZ;
 
-        Debug.Log("Attack dif: " + xdif + ", " + zdif);
+        //Debug.Log("Attack dif: " + xdif + ", " + zdif);
 
         // ** ** Directions
         // Find direction
@@ -265,7 +269,7 @@ public class PointAndClickController : MonoBehaviour
 
         int direction = GetDirection(xdif, zdif, tileX, tileZ);
 
-        Debug.Log("Found Direction: " + direction);
+        //Debug.Log("Found Direction: " + direction);
 
         UnityEngine.Vector2 currentTile = new UnityEngine.Vector2(tileX, tileZ);
         TileProp tile;
@@ -278,7 +282,7 @@ public class PointAndClickController : MonoBehaviour
             //Ensure check is within bounds
             if(currentTile.x >= grid.width || currentTile.y >= grid.height || currentTile.x < 0 || currentTile.y < 0)
             {
-                Debug.Log("Failed to find enemy within bounds");
+                //Debug.Log("Failed to find enemy within bounds");
                 return false;
             }
 
@@ -286,15 +290,15 @@ public class PointAndClickController : MonoBehaviour
             tile = grid.tiles[(int)currentTile.x, (int)currentTile.y].GetComponent<TileProp>();
             if(tile.isObstructing)
             {
-                Debug.Log("Attack obstructed");
+                //Debug.Log("Attack obstructed");
                 return false;
             }
             if(tile.hasEnemyUnit && tile.unit != null)
             {
                 if(tile.transform != currentSelectedObject.transform)
                 {
-                    Debug.Log("Attack blocked by another enemy");
-                    Debug.Log("Tile Obstructing, Selection: " + tile.transform.name + ", " + currentSelectedObject.name);
+                    //Debug.Log("Attack blocked by another enemy");
+                    //Debug.Log("Tile Obstructing, Selection: " + tile.transform.name + ", " + currentSelectedObject.name);
                     return false;
                 }
 
@@ -305,7 +309,7 @@ public class PointAndClickController : MonoBehaviour
 
         if(!foundEnemy)
         {
-            Debug.Log("Attack outside of pattern or range");
+            //Debug.Log("Attack outside of pattern or range");
         }
 
         return foundEnemy;
@@ -428,7 +432,7 @@ public class PointAndClickController : MonoBehaviour
 
     public int GetDirection(int xdif, int zdif, int tileX, int tileZ)
     {
-        Debug.Log("Finding Direction");
+        //Debug.Log("Finding Direction");
 
         if(zdif > 0)
         {

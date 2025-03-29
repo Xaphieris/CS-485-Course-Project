@@ -230,10 +230,12 @@ public class GridDraw : MonoBehaviour
                 //     clone.GetComponent<TileProp>().hasPlayerUnit = true;
                 // }
 
-                if(clone.transform.GetChild(1).GetComponent<TextMeshPro>() != null)
-                {
-                    clone.transform.GetChild(1).GetComponent<TextMeshPro>().text = clone.name;
-                }
+
+                // For debug use only, must have text in prefab
+                // if(clone.transform.GetChild(1).GetComponent<TextMeshPro>() != null)
+                // {
+                //     clone.transform.GetChild(1).GetComponent<TextMeshPro>().text = clone.name;
+                // }
                 
             }
         }

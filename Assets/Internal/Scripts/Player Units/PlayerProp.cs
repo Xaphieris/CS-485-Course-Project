@@ -21,6 +21,9 @@ public class PlayerProp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(health < 1)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

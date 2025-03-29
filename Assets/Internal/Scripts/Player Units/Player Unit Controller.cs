@@ -3,6 +3,8 @@ using System.Collections;
 
 using UnityEngine;
 using Unity.VisualScripting;
+using System.Runtime.CompilerServices;
+using UnityEngine.Tilemaps;
 
 public class PlayerUnitController : MonoBehaviour
 {
@@ -14,8 +16,12 @@ public class PlayerUnitController : MonoBehaviour
     public float moveSpeed = 1.5f;
 
     private IEnumerator moveU;
+    private IEnumerator Attack_1AN;
 
     private int tilesCrossed;
+    public GameObject bullet;
+    public GameObject PACC;
+    private PointAndClickController pointAndClick;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,7 +32,14 @@ public class PlayerUnitController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(PACC == null)
+        {
+            PACC = GameObject.Find("PointAndClickController");
+        }
+        if(pointAndClick == null)
+        {
+            pointAndClick = PACC.GetComponent<PointAndClickController>();
+        }
     }
 
 
@@ -109,7 +122,48 @@ public class PlayerUnitController : MonoBehaviour
         }
 
         //Debug.Log("Finished Corountine");
+        pointAndClick.playerMoving = false;
         yield return null;
+    }
+
+    private IEnumerator Attack_1Ani(GameObject enemyTile)
+    {   
+        //Spawn bullet
+        GameObject bulletClone = Instantiate(bullet, new Vector3(this.transform.position.x, this.transform.position.y + .5f , this.transform.position.z), Quaternion.identity);
+
+        tilePos = enemyTile.GetComponent<TileProp>().unit.transform.position;
+        
+        xDiff = tilePos.x - bulletClone.transform.position.x;
+        zDiff = tilePos.z - bulletClone.transform.position.z;
+
+        distance = Vector3.Distance(bulletClone.transform.position, tilePos + new Vector3(0, .5f, 0));
+        float lastdistance = distance;
+
+        while(distance >= moveSpeed * Time.deltaTime)
+        {
+            distance = Vector3.Distance(bulletClone.transform.position, tilePos + new Vector3(0, .5f, 0));
+            //Debug.Log("Bullet Distance: " + distance);
+
+            if(distance <= moveSpeed * Time.deltaTime)
+            {
+                bulletClone.transform.position = tilePos;
+            }
+            else if(distance > lastdistance)
+            {
+                break;
+            }
+            else
+            {
+                bulletClone.transform.position += new Vector3(xDiff * moveSpeed * Time.deltaTime, 0, zDiff * moveSpeed * Time.deltaTime);
+                //break;
+            }
+
+            yield return null;
+
+        }
+
+        pointAndClick.playerAttacking = false;
+        yield return null; 
     }
 
     //Attack 1
@@ -121,8 +175,12 @@ public class PlayerUnitController : MonoBehaviour
         }
         else
         {
-            Debug.Log("Attacking Enemy: " + enemyTile.GetComponent<TileProp>().unit.name + " for " + this.transform.GetComponent<PlayerProp>().attack_1dmg);
+            //Debug.Log("Attacking Enemy: " + enemyTile.GetComponent<TileProp>().unit.name + " for " + this.transform.GetComponent<PlayerProp>().attack_1dmg);
             this.transform.LookAt(new Vector3(enemyTile.transform.position.x, 0, enemyTile.transform.position.z));
+         
+            Attack_1AN = Attack_1Ani(enemyTile);
+            StartCoroutine(Attack_1AN);
+
             enemyTile.GetComponent<TileProp>().unit.GetComponent<EnemyProp>().health -= this.transform.GetComponent<PlayerProp>().attack_1dmg;
         }
     }

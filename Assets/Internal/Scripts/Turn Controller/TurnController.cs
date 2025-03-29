@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TurnController : MonoBehaviour
@@ -11,6 +12,11 @@ public class TurnController : MonoBehaviour
     public GameObject pointAndClickController;
     public GameObject enemyController;
     public TextMeshProUGUI turnText;
+    public TextMeshProUGUI enemiesText;
+    public GameObject enemyUnitContainer;
+    public GameObject playerUnitContainer;
+    public int numberOfEnemies;
+    public int numberOfPlayerUnits;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -43,6 +49,9 @@ public class TurnController : MonoBehaviour
             pointAndClickController.SetActive(false);
         }
         UpdateTurn();
+
+        GetNumberOfEnemies();
+        GetNumberOfPlayerUnits();
     }
 
     public void EndPlayerTurn()
@@ -71,5 +80,61 @@ public class TurnController : MonoBehaviour
     public void UpdateTurn()
     {
         turnText.text = ("Turn: " + turnNumber);
+    }
+
+    public void GetNumberOfEnemies()
+    {
+        numberOfEnemies = 0;
+        int children;
+        
+        children = enemyUnitContainer.transform.childCount;
+        //Debug.Log("Number of children: " + children);
+
+        for(int i = 0; i < children; i++)
+        {
+            if(enemyUnitContainer.transform.GetChild(i).gameObject.activeSelf)
+            {
+                numberOfEnemies++;
+            }
+        }
+
+        enemiesText.text = "Enemies: " + numberOfEnemies;
+
+        if(numberOfEnemies == 0 && turnNumber > 1)
+        {
+            endGameWin();
+        }
+    }
+
+    public void GetNumberOfPlayerUnits()
+    {
+        numberOfPlayerUnits = 0;
+        int children;
+        
+        children = playerUnitContainer.transform.childCount;
+        //Debug.Log("Number of children: " + children);
+
+        for(int i = 0; i < children; i++)
+        {
+            if(playerUnitContainer.transform.GetChild(i).gameObject.activeSelf)
+            {
+                numberOfPlayerUnits++;
+            }
+        }
+
+        if(numberOfPlayerUnits == 0 && turnNumber > 1)
+        {
+            endGameLoss();
+        }
+    }
+
+    private void endGameWin()
+    {
+        SceneManager.LoadScene("GameWin");
+    }
+
+    private void endGameLoss()
+    {
+        SceneManager.LoadScene("GameOver");
     }
 }

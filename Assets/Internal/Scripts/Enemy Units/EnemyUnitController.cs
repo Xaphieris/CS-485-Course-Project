@@ -21,7 +21,13 @@ public class EnemyUnitController : MonoBehaviour
     public GameObject playerUnit;
 
     public GameObject enemyToAttack;
+    public GameObject bullet;
     public bool scheduleAttack;
+
+    private AudioSource _audio;
+    public AudioClip shooting;
+    public AudioClip explosion;
+
 
     private bool enemyIsMoving;
     private bool enemyBusy;
@@ -34,12 +40,12 @@ public class EnemyUnitController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        _audio = this.GetComponent<AudioSource>();
     }
 
     void Awake()
     {
-        Debug.Log("Enemy Units Active");
+        //Debug.Log("Enemy Units Active");
         
         //GetActiveChildren();
         //MoveEnemies();
@@ -88,7 +94,7 @@ public class EnemyUnitController : MonoBehaviour
         int children;
         
         children = enemyContainer.transform.childCount;
-        Debug.Log("Number of children: " + children);
+        //Debug.Log("Number of children: " + children);
 
         for(int i = 0; i < children; i++)
         {
@@ -98,7 +104,7 @@ public class EnemyUnitController : MonoBehaviour
                 Debug.Log(enemyContainer.transform.GetChild(i).gameObject.name);
             }
         }
-        Debug.Log("Number of enemies: " + enemies.Count);
+        //Debug.Log("Number of enemies: " + enemies.Count);
     }
 
 
@@ -107,7 +113,11 @@ public class EnemyUnitController : MonoBehaviour
     {
         //Might need to do flags to determine if a coroutine is running to do one enemy at a time
         GameObject enemy;
-        playerUnit = GameObject.Find("Player Units").transform.GetChild(1).gameObject;
+        if(GameObject.Find("Player Units").transform.GetChild(1) != null)
+        {
+            playerUnit = GameObject.Find("Player Units").transform.GetChild(1).gameObject;
+        }
+
 
         if(enemiesMoved < enemies.Count && !enemyIsMoving && !enemyBusy)
         {
@@ -120,7 +130,7 @@ public class EnemyUnitController : MonoBehaviour
             List<TileProp> path = GetAttackPosition(enemy);
 
 
-            Debug.Log("Path size: " + path.Count);
+            //Debug.Log("Path size: " + path.Count);
 
             
 
@@ -129,7 +139,7 @@ public class EnemyUnitController : MonoBehaviour
 
             enemiesMoved++;
             
-            Debug.Log("Moving enemy: " + enemy.name);
+            //Debug.Log("Moving enemy: " + enemy.name);
         }
     }
 
@@ -142,7 +152,7 @@ public class EnemyUnitController : MonoBehaviour
         {
 
             //unit.transform.position = currentSelection.transform.position;
-            Debug.Log("Traversing with unit: " + enemy.name);
+            //Debug.Log("Traversing with unit: " + enemy.name);
 
             path.Reverse();
             moveU = moveUnit(enemy, path);
@@ -175,12 +185,18 @@ public class EnemyUnitController : MonoBehaviour
         }
         else
         {
-            if(scheduleAttack)
-            {
-                Attack_1(enemy);
-            }
-            enemyIsMoving = false;
+            moveU = moveUnit(enemy, path);
+            StartCoroutine(moveU);
         }
+        // else
+        // {
+        //     if(scheduleAttack)
+        //     {
+        //         AttackAnimation(enemy);
+        //         Attack_1(enemy);
+        //     }
+        //     enemyIsMoving = false;
+        // }
 
         //Dont attack on false
         return false;
@@ -195,56 +211,104 @@ public class EnemyUnitController : MonoBehaviour
         float xDiff, zDiff, distance;
 
         int tilesCrossed = 0;
-        Debug.Log("Started Coroutine");
+        //Debug.Log("Started Coroutine");
         //Debug.Log("Started Path finding (Start, Target): " + path[0].transform.name + ", " + path[path.Count-1].transform.name);
 
-        foreach (var t in path)
+        if(path.Count != 0)
         {
-            
-            Debug.Log("Tile Traversed: " + t.tileNumX + ", " + t.tileNumZ);
-
-            tilePos = t.transform.position;
-            enemy.transform.LookAt(t.transform);
-            
-            xDiff = tilePos.x - enemy.transform.position.x;
-            zDiff = tilePos.z - enemy.transform.position.z;
-
-            distance = Vector3.Distance(enemy.transform.position, tilePos);
-
-            while(distance >= moveSpeed * Time.deltaTime)
+            foreach (var t in path)
             {
+                
+                //Debug.Log("Tile Traversed: " + t.tileNumX + ", " + t.tileNumZ);
+
+                tilePos = t.transform.position;
+                enemy.transform.LookAt(t.transform);
+                
+                xDiff = tilePos.x - enemy.transform.position.x;
+                zDiff = tilePos.z - enemy.transform.position.z;
+
                 distance = Vector3.Distance(enemy.transform.position, tilePos);
-                if(distance <= moveSpeed * Time.deltaTime)
+
+                while(distance >= moveSpeed * Time.deltaTime)
                 {
-                    enemy.transform.position = tilePos;
+                    distance = Vector3.Distance(enemy.transform.position, tilePos);
+                    if(distance <= moveSpeed * Time.deltaTime)
+                    {
+                        enemy.transform.position = tilePos;
+                    }
+                    else
+                    {
+                        enemy.transform.position += new Vector3(xDiff * moveSpeed * Time.deltaTime, 0, zDiff * moveSpeed * Time.deltaTime);
+                    }
+
+
+                    //Debug.Log("Unit Position: " + this.transform.position.x + ", " + this.transform.position.z + " Speed: " + moveSpeed);
+
+                    yield return null;
                 }
-                else
+
+                tilesCrossed++;
+
+                if(tilesCrossed >= enemy.transform.GetComponent<EnemyProp>().moveRange)
                 {
-                    enemy.transform.position += new Vector3(xDiff * moveSpeed * Time.deltaTime, 0, zDiff * moveSpeed * Time.deltaTime);
+                    break;
                 }
-
-
-                //Debug.Log("Unit Position: " + this.transform.position.x + ", " + this.transform.position.z + " Speed: " + moveSpeed);
-
-                yield return null;
-            }
-
-            tilesCrossed++;
-
-            if(tilesCrossed >= enemy.transform.GetComponent<EnemyProp>().moveRange)
-            {
-                break;
             }
         }
+
 
         if(scheduleAttack)
         {
             AttackAnimation(enemy);
+
+            //Spawn bullet
+            GameObject bulletClone = Instantiate(bullet, new Vector3(enemy.transform.position.x, enemy.transform.position.y + .5f, enemy.transform.position.z), Quaternion.identity);
+
+            tilePos = playerUnit.transform.position;
+            
+            xDiff = tilePos.x - bulletClone.transform.position.x;
+            zDiff = tilePos.z - bulletClone.transform.position.z;
+
+            distance = Vector3.Distance(bulletClone.transform.position, tilePos + new Vector3(0, .5f, 0));
+            float lastdistance = distance;
+
+            while(distance >= moveSpeed * Time.deltaTime)
+            {
+                distance = Vector3.Distance(bulletClone.transform.position, tilePos + new Vector3(0, .5f));
+                //Debug.Log("Bullet Distance: " + distance);
+
+                if(distance <= moveSpeed * Time.deltaTime)
+                {
+                    bulletClone.transform.position = tilePos;
+                }
+                else if(distance > lastdistance)
+                {
+                    break;
+                }
+                else
+                {
+                    bulletClone.transform.position += new Vector3(xDiff * moveSpeed * Time.deltaTime, 0, zDiff * moveSpeed * Time.deltaTime);
+                    //break;
+                }
+
+
+                //Debug.Log("Bullet Position: " + bulletClone.transform.position.x + ", " + bulletClone.transform.position.z + " Speed: " + moveSpeed);
+
+                yield return null;
+            }
+
+            Destroy(bulletClone);
+
+            // Move bullet along path between enemy and player
+            // Destroy object when it gets to the end of path
+
+
             Attack_1(enemy);
+            scheduleAttack = false;
         }
 
         //enemiesMoved++;
-        Debug.Log("Finished Corountine");
+        //Debug.Log("Finished Corountine");
         enemyIsMoving = false;
         yield return null;
     }
@@ -324,7 +388,7 @@ public class EnemyUnitController : MonoBehaviour
                         //Keep shortest path
                         if(currentPath.Count < bestPath.Count || bestPath.Count == 0)
                         {
-                            Debug.Log("Best Path ATP, currentPath: " + bestPath.Count + ", " + currentPath.Count);
+                            //Debug.Log("Best Path ATP, currentPath: " + bestPath.Count + ", " + currentPath.Count);
 
                             bestPath = new List<TileProp>(currentPath);
                             bestTile = tile;
@@ -345,7 +409,7 @@ public class EnemyUnitController : MonoBehaviour
             }
         }
 
-        Debug.Log("Best path: " + bestPath.Count);
+        //Debug.Log("Best path: " + bestPath.Count);
 
         return bestPath;
     }
@@ -354,7 +418,7 @@ public class EnemyUnitController : MonoBehaviour
     //Attack function against player
     public void Attack_1(GameObject enemy)
     {
-        Debug.Log(enemy.name + " attacking player for: " + enemy.GetComponent<EnemyProp>().attack_1dmg);
+        //Debug.Log(enemy.name + " attacking player for: " + enemy.GetComponent<EnemyProp>().attack_1dmg);
 
         int enemyDmg = enemy.GetComponent<EnemyProp>().attack_1dmg;
         int playerArmor = playerUnit.GetComponent<PlayerProp>().armor;
@@ -369,7 +433,8 @@ public class EnemyUnitController : MonoBehaviour
     {
         enemy.transform.LookAt(new Vector3(playerUnit.transform.position.x, 0, playerUnit.transform.position.z));
 
-        
+        // _audio.clip = shooting;
+        // _audio.Play();
 
         enemyBusy = false;
     }
