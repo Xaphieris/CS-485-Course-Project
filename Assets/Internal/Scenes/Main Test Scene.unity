@@ -4550,7 +4550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyContainer: {fileID: 774037862}
-  moveSpeed: 1.5
+  moveSpeed: 2
   playerUnit: {fileID: 0}
   enemyToAttack: {fileID: 0}
   bullet: {fileID: 4786931539500238359, guid: 0a5925390d984c04ebcb51eff86efffd, type: 3}

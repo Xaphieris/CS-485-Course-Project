@@ -113,7 +113,7 @@ public class EnemyUnitController : MonoBehaviour
     {
         //Might need to do flags to determine if a coroutine is running to do one enemy at a time
         GameObject enemy;
-        if(GameObject.Find("Player Units").transform.GetChild(1) != null)
+        if(GameObject.Find("Player Units").transform.childCount > 1)
         {
             playerUnit = GameObject.Find("Player Units").transform.GetChild(1).gameObject;
         }
@@ -296,6 +296,8 @@ public class EnemyUnitController : MonoBehaviour
 
                 yield return null;
             }
+
+            bulletClone.gameObject.SetActive(false);
 
             Destroy(bulletClone);
 

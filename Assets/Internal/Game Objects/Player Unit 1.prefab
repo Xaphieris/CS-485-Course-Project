@@ -59,8 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee63dffd2f3e5a4e86208881a667e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.5
+  moveSpeed: 2
   bullet: {fileID: 4786931539500238359, guid: 0a5925390d984c04ebcb51eff86efffd, type: 3}
+  PACC: {fileID: 0}
 --- !u!114 &8700331564365521838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,10 +78,10 @@ MonoBehaviour:
   baseHealth: 5
   armor: 1
   baseArmor: 1
-  moveRange: 10
+  moveRange: 3
   tile: {fileID: 0}
   attack_1dmg: 2
-  attack_1range: 3
+  attack_1range: 4
 --- !u!1001 &3422630403130605413
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -50,19 +50,28 @@ public class TurnController : MonoBehaviour
         }
         UpdateTurn();
 
+        if(Input.GetKeyUp(KeyCode.Space))
+        {
+            EndPlayerTurn();
+        }
+
         GetNumberOfEnemies();
         GetNumberOfPlayerUnits();
     }
 
     public void EndPlayerTurn()
     {
+        if(!enemyTurn)
+        {
+            Debug.Log("Player Turn Ended");
+            enemyController.SetActive(true);
+            enemyController.GetComponent<EnemyUnitController>().StartTurn();
 
-        Debug.Log("Player Turn Ended");
-        enemyController.SetActive(true);
-        enemyController.GetComponent<EnemyUnitController>().StartTurn();
+            playerTurn = false;
+            enemyTurn = true;
+        }
 
-        playerTurn = false;
-        enemyTurn = true;
+
     }
 
     public void EndEnemyTurn()

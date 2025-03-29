@@ -1,15 +1,5 @@
 using System.Collections.Generic;
-using System.Net.WebSockets;
-using Mono.Cecil;
-using TMPro;
-using Unity.Mathematics;
-using Unity.VisualScripting;
-using UnityEditor;
-using UnityEditor.PackageManager.Requests;
-using UnityEditor.SearchService;
 using UnityEngine;
-using UnityEngine.Tilemaps;
-using UnityEngine.UI;
 
 public class GridDraw : MonoBehaviour
 {
@@ -71,7 +61,14 @@ public class GridDraw : MonoBehaviour
 
     void Update()
     {
-        
+        if(tiles == null)
+        {
+            CreateTiles();
+            SetAllConnectedTiles();
+            CheckTiles();
+            PlaceEnemyUnits();
+            PlacePlayerUnits();
+        }
     }
 
     [ContextMenu("Reset Tiles")]

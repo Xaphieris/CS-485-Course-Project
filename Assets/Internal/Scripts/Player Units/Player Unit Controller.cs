@@ -162,6 +162,9 @@ public class PlayerUnitController : MonoBehaviour
 
         }
 
+        bulletClone.gameObject.SetActive(false);
+        Destroy(bulletClone);
+
         pointAndClick.playerAttacking = false;
         yield return null; 
     }
